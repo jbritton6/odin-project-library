@@ -52,7 +52,7 @@ function displayBookOnCard (book) {
 
         const propertyTitle = document.createElement('p');
         const propertyTitleText = document.createTextNode(property[0]);
-        propertyTitle.classList.add('card-title');
+        propertyTitle.classList.add('card-subtitle');
         propertyTitle.appendChild(propertyTitleText);
         propertyContainer.appendChild(propertyTitle);
 
