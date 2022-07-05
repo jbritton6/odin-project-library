@@ -73,20 +73,21 @@ body {
     width: 100vw;
     z-index: 1;
 }
-/*
+
 .modal-content {
-    display: grid;
-    margin: auto;
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    width: 100vw;
+    z-index: 2;
 }
-*/
 
 form {
     background-color: pink;
     border: 2px solid black;
-    display: grid;
     padding: 20px;
-    place-content: center;
-    width: 300px;
+    width: 400px;
 }
 
 .modal-content p {
@@ -101,5 +102,9 @@ form {
 .modal-content span {
     text-align: left;
     display: inline-block;
+    width: 200px;
+}
+
+.modal-content button {
     width: 200px;
 }
