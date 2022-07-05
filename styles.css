@@ -60,3 +60,9 @@ body {
     place-self: center;
     width: 100px;
 }
+
+
+
+.modal {
+    display: none;
+}

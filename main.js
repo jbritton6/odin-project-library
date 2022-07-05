@@ -1,6 +1,7 @@
 const myLibrary = [];
 
 
+
 Book.prototype.haveReadString = function () {
     if (this.haveRead === true) {
         return "have read";
@@ -117,6 +118,34 @@ function createElementWithText(element, innerText) {
 }
 
 
+function setSubmitButtons () {
+    const button = document.querySelector('#add-book-button');
+    button.addEventListener('click', () => addNewBook());
+
+    const buttonForm = document.querySelector('#form-button');
+    buttonForm.addEventListener('click', () => addToLibrary());
+}
+
+
+function addNewBook () {
+    const modal = document.querySelector('.modal');
+    modal.style.display = 'block';
+
+    const title = document.querySelector('#title');
+    const author = document.querySelector('#author');
+    const numPages = document.querySelector('#pages');
+
+    myLibrary.push('hi');   
+    const book = new Book('h', 'author', 'numPages', false);
+    // const book = new Book(title, author, numPages, false);
+    addBookToLibrary(book);
+}
+
+
+function addToLibrary () {
+    const modal = document.querySelector('.modal');
+    modal.style.display = 'none';
+}
 
 
 
@@ -131,3 +160,4 @@ addBookToLibrary(dsa);
 
 
 displayLibrary();
+setSubmitButtons();

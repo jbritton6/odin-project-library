@@ -13,9 +13,7 @@
 </head>
 <body>
     <div class="header">
-        <a href="./form.html">
-            <button>Add new book</button>
-        </a>
+        <button id="add-book-button">Add new book</button>
     </div>
 
     <div class="card-container">
@@ -37,5 +35,29 @@
         </div>
         -->
     </div>
+
+    <div class="modal">
+        <form action="./index.html">
+            <p>
+                <span><label for="title">Title</label></span>
+                <input type="text" id="title">
+            </p>
+    
+            <p>
+                <span><label for="author">Author</label></span>
+                <input type="text" id="author">
+            </p>
+    
+            <p>
+                <span><label for="pages">Pages</label></span>
+                <input type="text" id="pages">
+            </p>
+    
+            <p>
+                <button id="form-button">Add to library</button>
+            </p>
+        </form>
+    </div>
+
 </body>
 </html>
