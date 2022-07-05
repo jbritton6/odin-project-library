@@ -128,7 +128,7 @@ function setSubmitButtons () {
 
 
 function addNewBook () {
-    const modal = document.querySelector('.modal');
+    const modal = document.querySelector('.modal-background');
     modal.style.display = 'block';
 
     const title = document.querySelector('#title');
@@ -143,7 +143,7 @@ function addNewBook () {
 
 
 function addToLibrary () {
-    const modal = document.querySelector('.modal');
+    const modal = document.querySelector('.modal-background');
     modal.style.display = 'none';
 }
 
