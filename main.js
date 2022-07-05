@@ -78,10 +78,20 @@ function displayBookOnCard (book, arrayIndex) {
         card.appendChild(propertyContainer);
     }
 
+    const buttonContainer = document.createElement('div');
+    // buttonContainer.classList.add('card-button-row');
+
     const removeButton = createElementWithText('button', 'Remove');
     removeButton.classList.add('card-button');
     removeButton.addEventListener('click', () => removeBookFromLibrary(arrayIndex));
-    card.appendChild(removeButton); 
+    buttonContainer.appendChild(removeButton); 
+
+    const readButton = createElementWithText('button', 'Read');
+    readButton.classList.add('card-button');
+    // removeButton.addEventListener('click', () => removeBookFromLibrary(arrayIndex));
+    buttonContainer.appendChild(readButton); 
+
+    card.appendChild(buttonContainer);
 
     cardContainer.appendChild(card);
 }
@@ -110,8 +120,3 @@ addBookToLibrary(dsa);
 
 
 displayLibrary();
-/*
-displayBookOnCard(eloquentJS);
-displayBookOnCard(dataApps);
-displayBookOnCard(dsa);
-*/
