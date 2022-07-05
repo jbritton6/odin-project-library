@@ -2,6 +2,9 @@ const myLibrary = [];
 
 
 
+setSubmitButtons();
+
+
 Book.prototype.haveReadString = function () {
     if (this.haveRead === true) {
         return "have read";
@@ -130,25 +133,25 @@ function setSubmitButtons () {
 function addNewBook () {
     const modal = document.querySelector('.modal-background');
     modal.style.display = 'block';
-
-    const title = document.querySelector('#title');
-    const author = document.querySelector('#author');
-    const numPages = document.querySelector('#pages');
-
-    myLibrary.push('hi');   
-    const book = new Book('h', 'author', 'numPages', false);
-    // const book = new Book(title, author, numPages, false);
-    addBookToLibrary(book);
 }
 
 
 function addToLibrary () {
+    const title = document.querySelector('#title');
+    const author = document.querySelector('#author');
+    const numPages = document.querySelector('#pages');
+
+    // myLibrary.push('hi');   
+    const book = new Book('h', 'author', 'numPages', false);
+    //const book = new Book(title, author, numPages, false);
+    addBookToLibrary(book);
+    displayLibrary();
     const modal = document.querySelector('.modal-background');
     modal.style.display = 'none';
 }
 
 
-
+/*
 const eloquentJS = new Book('EloquentJS', 'Marijn Haverbeke', 500, false);
 addBookToLibrary(eloquentJS);
 
@@ -161,3 +164,4 @@ addBookToLibrary(dsa);
 
 displayLibrary();
 setSubmitButtons();
+*/
