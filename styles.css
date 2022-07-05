@@ -18,6 +18,8 @@ body {
 
 .card-container {
     background-color: blue;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .card {
