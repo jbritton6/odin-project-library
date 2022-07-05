@@ -29,10 +29,19 @@ function displayLibrary () {
     }
 }
 
-const eqloquentJS = new Book('EloquentJS', 'Marijn Haverbeke', 500, false);
-console.log(eqloquentJS.info());
+function displayBookOnCard (book) {
+    const cardContainer = document.getElementsByClassName('card-container');
+    const card = document.createElement('div');
+    card.textContent = `<h1>${book.title}</h1>`;
+    cardContainer[0].appendChild(card);
+}
 
-addBookToLibrary(eqloquentJS);
+const eloquentJS = new Book('EloquentJS', 'Marijn Haverbeke', 500, false);
+console.log(eloquentJS.info());
+
+addBookToLibrary(eloquentJS);
 console.log(myLibrary);
 
 displayLibrary();
+
+displayBookOnCard(eloquentJS);
