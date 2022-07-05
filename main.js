@@ -57,6 +57,11 @@ function displayLibrary () {
     }
 }
 
+function displayCard () {
+    last = myLibrary.length - 1;
+    displayBookOnCard(myLibrary[last], last);
+}
+
 
 function displayBookOnCard (book, arrayIndex) {
     const cardContainer = document.querySelector('.card-container');
@@ -145,7 +150,7 @@ function addToLibrary () {
     const book = new Book('h', 'author', 'numPages', false);
     //const book = new Book(title, author, numPages, false);
     addBookToLibrary(book);
-    displayLibrary();
+    displayCard();
     const modal = document.querySelector('.modal-background');
     modal.style.display = 'none';
 }
