@@ -34,10 +34,12 @@ function displayBookOnCard (book) {
     const card = document.createElement('div');
     card.classList.add('card');
 
-    const title = document.createElement('h2');
+    const title = document.createElement('p');
+    title.classList.add('card-title');
     const titleText = document.createTextNode(`${book.title}`);
     title.appendChild(titleText);
 
+    const authorContainer = document.createElement('div');
     const author = document.createElement('p');
     const authorText = document.createTextNode(`${book.author}`);
     author.appendChild(authorText);

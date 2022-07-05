@@ -18,16 +18,23 @@ body {
     background-color: blue;
 }
 
+.card {
+    background-color: green;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    height: 200px;
+    width: 300px;
+}
+
+.card-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
 .card-title {
     font-size: 30px;
 }
 
 .card-subtitle {
     font-size: 20px;
-}
-
-.card {
-    background-color: green;
-    height: 200px;
-    width: 200px;
 }
