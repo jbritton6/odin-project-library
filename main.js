@@ -35,10 +35,35 @@ function displayBookOnCard (book) {
     card.classList.add('card');
 
     const title = document.createElement('p');
-    title.classList.add('card-title');
     const titleText = document.createTextNode(`${book.title}`);
+    title.classList.add('card-title');
     title.appendChild(titleText);
+    card.appendChild(title);
 
+    bookProperties = [
+        ['Author', book.author],
+        ['Pages', book.numPages],
+        ['Read yet?', book.haveReadString()]
+    ];
+
+    for (let property of bookProperties) {
+        const propertyContainer = document.createElement('div');
+        propertyContainer.classList.add('card-info');
+
+        const propertyTitle = document.createElement('p');
+        const propertyTitleText = document.createTextNode(property[0]);
+        propertyTitle.appendChild(propertyTitleText);
+        propertyContainer.appendChild(propertyTitle);
+
+        const propertyContent = document.createElement('p');
+        const propertyContentText = document.createTextNode(property[1]);
+        propertyContent.appendChild(propertyContentText);
+        propertyContainer.appendChild(propertyContent);
+
+        card.appendChild(propertyContainer);
+    }
+
+    /*
     const authorContainer = document.createElement('div');
     authorContainer.classList.add('card-info');
     const authorTitle = document.createElement('p');
@@ -62,6 +87,7 @@ function displayBookOnCard (book) {
     card.appendChild(authorContainer);
     card.appendChild(numPages);
     card.appendChild(haveRead);
+    */
     
     /* ard.textContent = `<h1>${book.title}</h1>`;*/
     cardContainer[0].appendChild(card);
