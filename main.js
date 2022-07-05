@@ -42,7 +42,7 @@ function displayLibrary () {
 }
 
 function displayBookOnCard (book, arrayIndex) {
-    const cardContainer = document.getElementsByClassName('card-container');
+    const cardContainer = document.querySelector('.card-container');
     const card = document.createElement('div');
     card.classList.add('card');
     card.id = arrayIndex;
@@ -84,7 +84,7 @@ function displayBookOnCard (book, arrayIndex) {
     removeButton.addEventListener('click', () => removeBookFromLibrary(arrayIndex));
     card.appendChild(removeButton); 
 
-    cardContainer[0].appendChild(card);
+    cardContainer.appendChild(card);
 }
 
 const eloquentJS = new Book('EloquentJS', 'Marijn Haverbeke', 500, false);
