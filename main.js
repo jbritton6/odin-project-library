@@ -24,8 +24,8 @@ function addBookToLibrary (book) {
 }
 
 function displayLibrary () {
-    for (book of myLibrary) {
-        console.log(book);
+    for (let book of myLibrary) {
+        displayBookOnCard(book);
     }
 }
 
@@ -82,6 +82,10 @@ addBookToLibrary(dataApps);
 const dsa = new Book('Data Structures & Algorithms in Python', 'Michael T. Goodrich', 748, true);
 addBookToLibrary(dsa);
 
+
+displayLibrary();
+/*
 displayBookOnCard(eloquentJS);
 displayBookOnCard(dataApps);
 displayBookOnCard(dsa);
+*/
