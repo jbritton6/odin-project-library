@@ -33,10 +33,26 @@ function displayBookOnCard (book) {
     const cardContainer = document.getElementsByClassName('card-container');
     const card = document.createElement('div');
 
-    const title = document.createElement('h1')
+    const title = document.createElement('h2');
     const titleText = document.createTextNode(`${book.title}`);
     title.appendChild(titleText);
+
+    const author = document.createElement('p');
+    const authorText = document.createTextNode(`${book.author}`);
+    author.appendChild(authorText);
+
+    const numPages = document.createElement('p');
+    const numPagesText = document.createTextNode(`${book.numPages}`);
+    numPages.appendChild(numPagesText);
+
+    const haveRead = document.createElement('p');
+    const haveReadText = document.createTextNode(`${book.haveReadString()}`);
+    haveRead.appendChild(haveReadText);
+
     card.appendChild(title);
+    card.appendChild(author);
+    card.appendChild(numPages);
+    card.appendChild(haveRead);
     
     /* ard.textContent = `<h1>${book.title}</h1>`;*/
     cardContainer[0].appendChild(card);
