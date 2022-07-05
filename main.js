@@ -64,6 +64,12 @@ function displayBookOnCard (book) {
         card.appendChild(propertyContainer);
     }
 
+    const removeButton = document.createElement('button');
+    const removeButtonText = document.createTextNode('Remove');
+    removeButton.classList.add('card-button');
+    removeButton.appendChild(removeButtonText);
+    card.appendChild(removeButton); 
+
     cardContainer[0].appendChild(card);
 }
 
