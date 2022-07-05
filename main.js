@@ -23,8 +23,16 @@ function addBookToLibrary (book) {
     myLibrary.push(book);
 }
 
+function displayLibrary () {
+    for (book of myLibrary) {
+        console.log(book);
+    }
+}
+
 const eqloquentJS = new Book('EloquentJS', 'Marijn Haverbeke', 500, false);
 console.log(eqloquentJS.info());
 
 addBookToLibrary(eqloquentJS);
 console.log(myLibrary);
+
+displayLibrary();
