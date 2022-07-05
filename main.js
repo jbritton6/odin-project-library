@@ -1,3 +1,5 @@
+const myLibrary = [];
+
 Book.prototype.haveReadString = function () {
     if (this.haveRead === true) {
         return "have read";
@@ -16,5 +18,12 @@ function Book (title, author, numPages, haveRead) {
     this.numPages = numPages;
 }
 
+function addBookToLibrary (book) {
+    myLibrary.push(book);
+}
+
 const eqloquentJS = new Book('EloquentJS', 'Marijn Haverbeke', 500, false);
 console.log(eqloquentJS.info());
+
+addBookToLibrary(eqloquentJS);
+console.log(myLibrary);
