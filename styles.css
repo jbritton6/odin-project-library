@@ -17,3 +17,9 @@ body {
 .card-container {
     background-color: blue;
 }
+
+.card {
+    background-color: green;
+    height: 100px;
+    width: 100px;
+}
