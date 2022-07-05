@@ -47,11 +47,16 @@ function displayBookOnCard (book, arrayIndex) {
     card.classList.add('card');
     card.id = arrayIndex;
 
+    /*
     const title = document.createElement('p');
     const titleText = document.createTextNode(`${book.title}`);
     title.classList.add('card-title');
     title.appendChild(titleText);
     card.appendChild(title);
+    */
+   const title = createElementWithText('p', `${book.title}`);
+   title.classList.add('card-title');
+   card.appendChild(title);
 
     bookProperties = [
         ['Author', book.author],
@@ -86,6 +91,18 @@ function displayBookOnCard (book, arrayIndex) {
 
     cardContainer.appendChild(card);
 }
+
+function createElementWithText(element, innerText) {
+    const elementObject = document.createElement(element);
+    const elementObjectText = document.createTextNode(innerText);
+    elementObject.appendChild(elementObjectText);
+
+    return elementObject;
+}
+
+
+
+
 
 const eloquentJS = new Book('EloquentJS', 'Marijn Haverbeke', 500, false);
 addBookToLibrary(eloquentJS);
