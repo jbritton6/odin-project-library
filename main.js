@@ -23,6 +23,10 @@ function addBookToLibrary (book) {
     myLibrary.push(book);
 }
 
+function removeBookFromLibrary () {
+    console.log('hi');
+}
+
 function displayLibrary () {
     for (let i = 0; i < myLibrary.length; i++) {
         displayBookOnCard(myLibrary[i], i);
@@ -69,6 +73,7 @@ function displayBookOnCard (book, arrayIndex) {
     const removeButtonText = document.createTextNode('Remove');
     removeButton.classList.add('card-button');
     removeButton.appendChild(removeButtonText);
+    removeButton.addEventListener('click', removeBookFromLibrary);
     card.appendChild(removeButton); 
 
     cardContainer[0].appendChild(card);
