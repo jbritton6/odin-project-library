@@ -40,9 +40,15 @@ function displayBookOnCard (book) {
     title.appendChild(titleText);
 
     const authorContainer = document.createElement('div');
+    authorContainer.classList.add('card-info');
+    const authorTitle = document.createElement('p');
+    const authorTitleText = document.createTextNode('Author')
     const author = document.createElement('p');
     const authorText = document.createTextNode(`${book.author}`);
+    authorTitle.appendChild(authorTitleText);
     author.appendChild(authorText);
+    authorContainer.appendChild(authorTitle);
+    authorContainer.appendChild(author);
 
     const numPages = document.createElement('p');
     const numPagesText = document.createTextNode(`${book.numPages}`);
@@ -53,7 +59,7 @@ function displayBookOnCard (book) {
     haveRead.appendChild(haveReadText);
 
     card.appendChild(title);
-    card.appendChild(author);
+    card.appendChild(authorContainer);
     card.appendChild(numPages);
     card.appendChild(haveRead);
     
