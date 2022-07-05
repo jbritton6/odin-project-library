@@ -79,7 +79,7 @@ function displayBookOnCard (book, arrayIndex) {
     }
 
     const buttonContainer = document.createElement('div');
-    // buttonContainer.classList.add('card-button-row');
+    buttonContainer.classList.add('card-button-container');
 
     const removeButton = createElementWithText('button', 'Remove');
     removeButton.classList.add('card-button');

@@ -49,6 +49,12 @@ body {
     font-weight: 900;
 }
 
+.card-button-container {
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
 .card-button {
     height: 30px;
     place-self: center;
