@@ -23,8 +23,16 @@ function addBookToLibrary (book) {
     myLibrary.push(book);
 }
 
-function removeBookFromLibrary () {
-    console.log('hi');
+function removeBookFromLibrary (arrayIndex) {
+    myLibrary.splice(arrayIndex, 1);
+
+    const cardContainer = document.querySelector('.card-container');
+    while (cardContainer.hasChildNodes()) {
+        cardContainer.removeChild(cardContainer.lastChild);
+    }
+
+    displayLibrary();
+    console.log(arrayIndex);
 }
 
 function displayLibrary () {
@@ -73,7 +81,7 @@ function displayBookOnCard (book, arrayIndex) {
     const removeButtonText = document.createTextNode('Remove');
     removeButton.classList.add('card-button');
     removeButton.appendChild(removeButtonText);
-    removeButton.addEventListener('click', removeBookFromLibrary);
+    removeButton.addEventListener('click', () => removeBookFromLibrary(arrayIndex));
     card.appendChild(removeButton); 
 
     cardContainer[0].appendChild(card);
