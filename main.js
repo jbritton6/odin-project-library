@@ -24,15 +24,16 @@ function addBookToLibrary (book) {
 }
 
 function displayLibrary () {
-    for (let book of myLibrary) {
-        displayBookOnCard(book);
+    for (let i = 0; i < myLibrary.length; i++) {
+        displayBookOnCard(myLibrary[i], i);
     }
 }
 
-function displayBookOnCard (book) {
+function displayBookOnCard (book, arrayIndex) {
     const cardContainer = document.getElementsByClassName('card-container');
     const card = document.createElement('div');
     card.classList.add('card');
+    card.id = arrayIndex;
 
     const title = document.createElement('p');
     const titleText = document.createTextNode(`${book.title}`);
