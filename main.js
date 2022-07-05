@@ -1,5 +1,6 @@
 const myLibrary = [];
 
+
 Book.prototype.haveReadString = function () {
     if (this.haveRead === true) {
         return "have read";
@@ -8,9 +9,11 @@ Book.prototype.haveReadString = function () {
     }
 };
 
+
 Book.prototype.info = function () {
     return `${this.title} by ${this.author}, ${this.numPages} pages, ${this.haveReadString()}.`;
 };
+
 
 function Book (title, author, numPages, haveRead) {
     this.title = title;
@@ -19,9 +22,11 @@ function Book (title, author, numPages, haveRead) {
     this.haveRead = haveRead;
 }
 
+
 function addBookToLibrary (book) {
     myLibrary.push(book);
 }
+
 
 function removeBookFromLibrary (arrayIndex) {
     myLibrary.splice(arrayIndex, 1);
@@ -35,11 +40,13 @@ function removeBookFromLibrary (arrayIndex) {
     console.log(arrayIndex);
 }
 
+
 function displayLibrary () {
     for (let i = 0; i < myLibrary.length; i++) {
         displayBookOnCard(myLibrary[i], i);
     }
 }
+
 
 function displayBookOnCard (book, arrayIndex) {
     const cardContainer = document.querySelector('.card-container');
@@ -47,13 +54,7 @@ function displayBookOnCard (book, arrayIndex) {
     card.classList.add('card');
     card.id = arrayIndex;
 
-    /*
-    const title = document.createElement('p');
-    const titleText = document.createTextNode(`${book.title}`);
-    title.classList.add('card-title');
-    title.appendChild(titleText);
-    card.appendChild(title);
-    */
+
    const title = createElementWithText('p', `${book.title}`);
    title.classList.add('card-title');
    card.appendChild(title);
@@ -68,29 +69,24 @@ function displayBookOnCard (book, arrayIndex) {
         const propertyContainer = document.createElement('div');
         propertyContainer.classList.add('card-info');
 
-        const propertyTitle = document.createElement('p');
-        const propertyTitleText = document.createTextNode(property[0]);
-        propertyTitle.classList.add('card-subtitle');
-        propertyTitle.appendChild(propertyTitleText);
-        propertyContainer.appendChild(propertyTitle);
+        const title = createElementWithText('p', property[0]);
+        title.classList.add('card-subtitle');
+        propertyContainer.appendChild(title);
 
-        const propertyContent = document.createElement('p');
-        const propertyContentText = document.createTextNode(property[1]);
-        propertyContent.appendChild(propertyContentText);
-        propertyContainer.appendChild(propertyContent);
+        const content = createElementWithText('p', property[1]);
+        propertyContainer.appendChild(content);
 
         card.appendChild(propertyContainer);
     }
 
-    const removeButton = document.createElement('button');
-    const removeButtonText = document.createTextNode('Remove');
+    const removeButton = createElementWithText('button', 'Remove');
     removeButton.classList.add('card-button');
-    removeButton.appendChild(removeButtonText);
     removeButton.addEventListener('click', () => removeBookFromLibrary(arrayIndex));
     card.appendChild(removeButton); 
 
     cardContainer.appendChild(card);
 }
+
 
 function createElementWithText(element, innerText) {
     const elementObject = document.createElement(element);
