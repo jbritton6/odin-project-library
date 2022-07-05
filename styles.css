@@ -18,8 +18,16 @@ body {
     background-color: blue;
 }
 
+.card-title {
+    font-size: 30px;
+}
+
+.card-subtitle {
+    font-size: 20px;
+}
+
 .card {
     background-color: green;
-    height: 100px;
-    width: 100px;
+    height: 200px;
+    width: 200px;
 }
