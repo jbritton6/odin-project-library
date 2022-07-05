@@ -66,7 +66,7 @@ function displayBookOnCard (book, arrayIndex) {
 
     for (let property of bookProperties) {
         const propertyContainer = document.createElement('div');
-        propertyContainer.classList.add('card-info');
+        propertyContainer.classList.add('card-info-container');
 
         const title = createElementWithText('p', property[0]);
         title.classList.add('card-subtitle');

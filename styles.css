@@ -33,7 +33,7 @@ body {
     /* width: 300px; */
 }
 
-.card-info {
+.card-info-container {
     align-self: center;
     display: grid;
     grid-template-columns: 100px auto;
