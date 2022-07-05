@@ -32,7 +32,13 @@ function displayLibrary () {
 function displayBookOnCard (book) {
     const cardContainer = document.getElementsByClassName('card-container');
     const card = document.createElement('div');
-    card.textContent = `<h1>${book.title}</h1>`;
+
+    const title = document.createElement('h1')
+    const titleText = document.createTextNode(`${book.title}`);
+    title.appendChild(titleText);
+    card.appendChild(title);
+    
+    /* ard.textContent = `<h1>${book.title}</h1>`;*/
     cardContainer[0].appendChild(card);
 }
 
