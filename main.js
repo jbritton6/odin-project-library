@@ -37,7 +37,6 @@ function removeBookFromLibrary (arrayIndex) {
     }
 
     displayLibrary();
-    console.log(arrayIndex);
 }
 
 
