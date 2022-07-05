@@ -40,6 +40,13 @@ function removeBookFromLibrary (arrayIndex) {
 }
 
 
+function changeReadStatus (arrayIndex) {
+    myLibrary[arrayIndex].haveRead = true;
+    const book = document.querySelector(`.read-${arrayIndex}`);
+    book.innerHTML = myLibrary[arrayIndex].haveReadString();
+}
+
+
 function displayLibrary () {
     for (let i = 0; i < myLibrary.length; i++) {
         displayBookOnCard(myLibrary[i], i);
@@ -75,6 +82,10 @@ function displayBookOnCard (book, arrayIndex) {
         const content = createElementWithText('p', property[1]);
         propertyContainer.appendChild(content);
 
+        if (property[0] === 'Read yet?') {
+            content.classList.add(`read-${arrayIndex}`)
+        }
+
         card.appendChild(propertyContainer);
     }
 
@@ -88,7 +99,7 @@ function displayBookOnCard (book, arrayIndex) {
 
     const readButton = createElementWithText('button', 'Read');
     readButton.classList.add('card-button');
-    // removeButton.addEventListener('click', () => removeBookFromLibrary(arrayIndex));
+    readButton.addEventListener('click', () => changeReadStatus(arrayIndex));
     buttonContainer.appendChild(readButton); 
 
     card.appendChild(buttonContainer);
