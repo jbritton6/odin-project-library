@@ -74,11 +74,14 @@ function displayBookOnCard (book) {
 }
 
 const eloquentJS = new Book('EloquentJS', 'Marijn Haverbeke', 500, false);
-console.log(eloquentJS.info());
-
 addBookToLibrary(eloquentJS);
-console.log(myLibrary);
 
-displayLibrary();
+const dataApps = new Book('Designing Data-Intensive Applications', 'Martin Kleppmann', 590, false);
+addBookToLibrary(dataApps);
+
+const dsa = new Book('Data Structures & Algorithms in Python', 'Michael T. Goodrich', 748, true);
+addBookToLibrary(dsa);
 
 displayBookOnCard(eloquentJS);
+displayBookOnCard(dataApps);
+displayBookOnCard(dsa);
