@@ -32,14 +32,8 @@ function addBookToLibrary (book) {
 function removeBookFromLibrary (arrayIndex) {
     myLibrary.splice(arrayIndex, 1);
 
-    //const cardContainer = document.querySelectorAll('.card');
+
     const cardContainer = document.querySelector('.card-container');
-/*
-    for (let card of cardContainer) {
-        card.id = arrayIndex;
-    }
-    */
-    
     while (cardContainer.hasChildNodes()) {
         cardContainer.removeChild(cardContainer.lastChild);
     }
