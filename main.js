@@ -130,15 +130,6 @@ function newElement (elem, text = null, classText = null) {
 }
 
 
-function createElementWithText(element, innerText) {
-    const elementObject = document.createElement(element);
-    const elementObjectText = document.createTextNode(innerText);
-    elementObject.appendChild(elementObjectText);
-
-    return elementObject;
-}
-
-
 function setButtons () {
     document
         .querySelector('#add-book-button')
