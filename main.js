@@ -125,18 +125,24 @@ function createElementWithText(element, innerText) {
 
 function setSubmitButtons () {
     const button = document.querySelector('#add-book-button');
-    button.addEventListener('click', () => addNewBook());
+    button.addEventListener('click', () => toggleModalDisplay());
 
     const buttonForm = document.querySelector('#form-button');
     buttonForm.addEventListener('click', () => addToLibrary());
 }
 
 
-function addNewBook () {
+function toggleModalDisplay () {
     const modal = document.querySelector('.modal-background');
-    modal.style.display = 'block';
-}
 
+    if (modal.classList.contains('hide')) {
+        modal.classList.add('show');
+        modal.classList.remove('hide');
+    } else {
+        modal.classList.add('hide');
+        modal.classList.remove('show');
+    }
+}
 
 function addToLibrary () {
     const title = document.querySelector('#title').value;
@@ -146,6 +152,6 @@ function addToLibrary () {
     const book = new Book(title, author, numPages, false);
     addBookToLibrary(book);
     displayCard();
-    const modal = document.querySelector('.modal-background');
-    modal.style.display = 'none';
+
+    toggleModalDisplay();
 }
