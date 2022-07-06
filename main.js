@@ -24,6 +24,43 @@ function Book (title, author, numPages, haveRead) {
 }
 
 
+function setButtons () {
+    document
+        .querySelector('#add-book-button')
+        .addEventListener('click', () => toggleModalDisplay());
+
+    document
+        .querySelector('#form-button')
+        .addEventListener('click', () => addToLibrary());
+}
+
+
+function toggleModalDisplay () {
+    const modal = document.querySelector('.modal-background');
+
+    if (modal.classList.contains('hide')) {
+        modal.classList.add('show');
+        modal.classList.remove('hide');
+    } else {
+        modal.classList.add('hide');
+        modal.classList.remove('show');
+    }
+}
+
+
+function addToLibrary () {
+    const title = document.querySelector('#title').value;
+    const author = document.querySelector('#author').value;
+    const numPages = document.querySelector('#pages').value;
+
+    const book = new Book(title, author, numPages, false);
+    myLibrary.push(book);
+    displayBook(myLibrary.length - 1)
+
+    toggleModalDisplay();
+}
+
+
 function removeBookFromLibrary (arrayIndex) {
     myLibrary.splice(arrayIndex, 1);
 
@@ -106,40 +143,4 @@ function newElement (elem, text = null, classText = null) {
     }
 
     return element;
-}
-
-
-function setButtons () {
-    document
-        .querySelector('#add-book-button')
-        .addEventListener('click', () => toggleModalDisplay());
-
-    document
-        .querySelector('#form-button')
-        .addEventListener('click', () => addToLibrary());
-}
-
-
-function toggleModalDisplay () {
-    const modal = document.querySelector('.modal-background');
-
-    if (modal.classList.contains('hide')) {
-        modal.classList.add('show');
-        modal.classList.remove('hide');
-    } else {
-        modal.classList.add('hide');
-        modal.classList.remove('show');
-    }
-}
-
-function addToLibrary () {
-    const title = document.querySelector('#title').value;
-    const author = document.querySelector('#author').value;
-    const numPages = document.querySelector('#pages').value;
-
-    const book = new Book(title, author, numPages, false);
-    myLibrary.push(book);
-    displayBook(myLibrary.length - 1)
-
-    toggleModalDisplay();
 }
