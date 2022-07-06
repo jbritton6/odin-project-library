@@ -1,7 +1,4 @@
 const myLibrary = [];
-
-
-
 setSubmitButtons();
 
 
@@ -146,27 +143,9 @@ function addToLibrary () {
     const author = document.querySelector('#author').value;
     const numPages = document.querySelector('#pages').value;
 
-    // myLibrary.push('hi');   
-    // const book = new Book('h', 'author', 'numPages', false);
     const book = new Book(title, author, numPages, false);
     addBookToLibrary(book);
     displayCard();
     const modal = document.querySelector('.modal-background');
     modal.style.display = 'none';
 }
-
-
-/*
-const eloquentJS = new Book('EloquentJS', 'Marijn Haverbeke', 500, false);
-addBookToLibrary(eloquentJS);
-
-const dataApps = new Book('Designing Data-Intensive Applications', 'Martin Kleppmann', 590, false);
-addBookToLibrary(dataApps);
-
-const dsa = new Book('Data Structures & Algorithms in Python', 'Michael T. Goodrich', 748, true);
-addBookToLibrary(dsa);
-
-
-displayLibrary();
-setSubmitButtons();
-*/
