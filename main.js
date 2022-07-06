@@ -56,11 +56,6 @@ function displayLibrary () {
     }
 }
 
-function displayCard () {
-    last = myLibrary.length - 1;
-    displayBook(last);
-}
-
 
 function displayBook (arrayIndex) {
     let book = myLibrary[arrayIndex];
@@ -147,7 +142,7 @@ function addToLibrary () {
 
     const book = new Book(title, author, numPages, false);
     addBookToLibrary(book);
-    displayCard();
+    displayBook(myLibrary.length - 1)
 
     toggleModalDisplay();
 }
