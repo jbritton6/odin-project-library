@@ -1,5 +1,5 @@
 const myLibrary = [];
-setSubmitButtons();
+setButtons();
 
 
 Book.prototype.haveReadString = function () {
@@ -123,12 +123,14 @@ function createElementWithText(element, innerText) {
 }
 
 
-function setSubmitButtons () {
-    const button = document.querySelector('#add-book-button');
-    button.addEventListener('click', () => toggleModalDisplay());
+function setButtons () {
+    document
+        .querySelector('#add-book-button')
+        .addEventListener('click', () => toggleModalDisplay());
 
-    const buttonForm = document.querySelector('#form-button');
-    buttonForm.addEventListener('click', () => addToLibrary());
+    document
+        .querySelector('#form-button')
+        .addEventListener('click', () => addToLibrary());
 }
 
 
