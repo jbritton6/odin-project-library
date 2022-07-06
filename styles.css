@@ -7,13 +7,19 @@
 
 body {
     display: grid;
-    grid-template-rows: 100px 4fr;
+    grid-template-rows: 200px 4fr;
     height: 100vh;
     width: 100vw;
 }
 
-.header {
-    background-color: red;
+.header > img {
+    object-fit: cover;
+    overflow: hidden;
+    position: fixed;
+    right: 0px;
+    top: -400px;
+    width: 1500px;
+    z-index: -1;
 }
 
 .card-container {
