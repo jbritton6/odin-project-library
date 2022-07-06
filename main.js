@@ -52,20 +52,18 @@ function changeReadStatus (arrayIndex) {
 
 function displayLibrary () {
     for (let i = 0; i < myLibrary.length; i++) {
-        //displayBookOnCard(myLibrary[i], i);
-        displayBookOnCard(i);
+        displayBook(i);
     }
 }
 
 function displayCard () {
     last = myLibrary.length - 1;
-    //displayBookOnCard(myLibrary[last], last);
-    displayBookOnCard(last);
+    displayBook(last);
 }
 
 
-function displayBookOnCard (/*book, */arrayIndex) {
-    let book = myLibrary[arrayIndex]; //
+function displayBook (arrayIndex) {
+    let book = myLibrary[arrayIndex];
     const cardContainer = document.querySelector('.card-container');
     const card = newElement('div', null, 'card');
     card.id = `id-${arrayIndex}`;
