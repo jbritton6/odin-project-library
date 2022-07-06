@@ -44,8 +44,15 @@ function removeBookFromLibrary (arrayIndex) {
 
 function changeReadStatus (arrayIndex) {
     myLibrary[arrayIndex].haveRead = true;
+
+    const disp = document.querySelector(`#id-${arrayIndex} > div:nth-child(4) > p + p`);
+    disp.innerHTML = myLibrary[arrayIndex].haveReadString();
+    disp.style['background-color'] = 'red';
+
+    /*
     const book = document.querySelector(`.read-${arrayIndex}`);
     book.innerHTML = myLibrary[arrayIndex].haveReadString();
+    */
 }
 
 
@@ -64,7 +71,7 @@ function displayCard () {
 function displayBookOnCard (book, arrayIndex) {
     const cardContainer = document.querySelector('.card-container');
     const card = newElement('div', null, 'card');
-    card.id = arrayIndex;
+    card.id = `id-${arrayIndex}`;
 
     const title = newElement('p', `${book.title}`, 'card-title');
     card.appendChild(title);
