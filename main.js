@@ -47,12 +47,6 @@ function changeReadStatus (arrayIndex) {
 
     const disp = document.querySelector(`#id-${arrayIndex} > div:nth-child(4) > p + p`);
     disp.innerHTML = myLibrary[arrayIndex].haveReadString();
-    disp.style['background-color'] = 'red';
-
-    /*
-    const book = document.querySelector(`.read-${arrayIndex}`);
-    book.innerHTML = myLibrary[arrayIndex].haveReadString();
-    */
 }
 
 
@@ -85,10 +79,6 @@ function displayBookOnCard (book, arrayIndex) {
     for (let property of bookProperties) {
         const title = newElement('p', property[0], 'card-subtitle');
         const content = newElement('p', property[1]);
-
-        if (property[0] === 'Read yet?') {
-            content.classList.add(`read-${arrayIndex}`)
-        }
 
         const propertyContainer = newElement('div', null, 'card-info-container');
         propertyContainer.appendChild(title);
