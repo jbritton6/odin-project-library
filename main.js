@@ -24,11 +24,6 @@ function Book (title, author, numPages, haveRead) {
 }
 
 
-function addBookToLibrary (book) {
-    myLibrary.push(book);
-}
-
-
 function removeBookFromLibrary (arrayIndex) {
     myLibrary.splice(arrayIndex, 1);
 
@@ -141,7 +136,7 @@ function addToLibrary () {
     const numPages = document.querySelector('#pages').value;
 
     const book = new Book(title, author, numPages, false);
-    addBookToLibrary(book);
+    myLibrary.push(book);
     displayBook(myLibrary.length - 1)
 
     toggleModalDisplay();
