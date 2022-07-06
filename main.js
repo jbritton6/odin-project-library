@@ -142,13 +142,13 @@ function addNewBook () {
 
 
 function addToLibrary () {
-    const title = document.querySelector('#title');
-    const author = document.querySelector('#author');
-    const numPages = document.querySelector('#pages');
+    const title = document.querySelector('#title').value;
+    const author = document.querySelector('#author').value;
+    const numPages = document.querySelector('#pages').value;
 
     // myLibrary.push('hi');   
-    const book = new Book('h', 'author', 'numPages', false);
-    //const book = new Book(title, author, numPages, false);
+    // const book = new Book('h', 'author', 'numPages', false);
+    const book = new Book(title, author, numPages, false);
     addBookToLibrary(book);
     displayCard();
     const modal = document.querySelector('.modal-background');
