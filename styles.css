@@ -131,9 +131,29 @@ form {
 .modal-content span {
     text-align: left;
     display: inline-block;
-    width: 200px;
+    width: 300px;
+}
+
+.modal-content input {
+    width: 300px;
 }
 
 .modal-content button {
     width: 200px;
+}
+
+.modal-content .checkbox {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: auto;
+    width: 300px;
+}
+
+.modal-content .checkbox input {
+    justify-self: right;
+    width: 15px;
+}
+
+.modal-content label {
+    width: 100px;
 }
