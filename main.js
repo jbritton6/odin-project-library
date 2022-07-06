@@ -32,7 +32,6 @@ function addBookToLibrary (book) {
 function removeBookFromLibrary (arrayIndex) {
     myLibrary.splice(arrayIndex, 1);
 
-
     const cardContainer = document.querySelector('.card-container');
     while (cardContainer.hasChildNodes()) {
         cardContainer.removeChild(cardContainer.lastChild);
@@ -77,31 +76,27 @@ function displayBookOnCard (book, arrayIndex) {
     ];
 
     for (let property of bookProperties) {
-        const propertyContainer = newElement('div', null, 'card-info-container');
-
         const title = newElement('p', property[0], 'card-subtitle');
-        propertyContainer.appendChild(title);
-
         const content = newElement('p', property[1]);
-        propertyContainer.appendChild(content);
 
         if (property[0] === 'Read yet?') {
             content.classList.add(`read-${arrayIndex}`)
         }
 
+        const propertyContainer = newElement('div', null, 'card-info-container');
+        propertyContainer.appendChild(title);
+        propertyContainer.appendChild(content);
         card.appendChild(propertyContainer);
     }
 
-    const buttonContainer = newElement('div', null, 'card-button-container');
-
     const removeButton = newElement('button', 'Remove', 'card-button');
-    removeButton.addEventListener('click', () => removeBookFromLibrary(arrayIndex));
-    buttonContainer.appendChild(removeButton); 
-
     const readButton = newElement('button', 'Read', 'card-button');
+    removeButton.addEventListener('click', () => removeBookFromLibrary(arrayIndex));
     readButton.addEventListener('click', () => changeReadStatus(arrayIndex));
-    buttonContainer.appendChild(readButton); 
 
+    const buttonContainer = newElement('div', null, 'card-button-container');
+    buttonContainer.appendChild(removeButton); 
+    buttonContainer.appendChild(readButton); 
     card.appendChild(buttonContainer);
 
     cardContainer.appendChild(card);
