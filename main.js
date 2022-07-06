@@ -52,8 +52,9 @@ function addToLibrary () {
     const title = document.querySelector('#title').value;
     const author = document.querySelector('#author').value;
     const numPages = document.querySelector('#pages').value;
+    const read = document.querySelector('#read').checked;
 
-    const book = new Book(title, author, numPages, false);
+    const book = new Book(title, author, numPages, read);
     myLibrary.push(book);
     displayBook(myLibrary.length - 1)
 
