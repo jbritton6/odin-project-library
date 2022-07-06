@@ -33,15 +33,17 @@ function removeBookFromLibrary (arrayIndex) {
     }
 
     displayLibrary();
-    
 }
 
 
 function changeReadStatus (arrayIndex) {
     myLibrary[arrayIndex].haveRead = true;
 
-    const disp = document.querySelector(`#id-${arrayIndex} > div:nth-child(4) > p + p`);
-    disp.innerHTML = myLibrary[arrayIndex].haveReadString();
+    document
+        .querySelector(`#id-${arrayIndex} > div:nth-child(4) > p + p`)
+        .textContent
+        = myLibrary[arrayIndex]
+        .haveReadString();
 }
 
 
