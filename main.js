@@ -29,7 +29,7 @@ class Book {
 }
 
 
-function setButtons () {
+function setButtons() {
     document
         .querySelector('#add-book-button')
         .addEventListener('click', () => toggleModalDisplay());
@@ -40,7 +40,7 @@ function setButtons () {
 }
 
 
-function toggleModalDisplay () {
+function toggleModalDisplay() {
     const modal = document.querySelector('.modal-background');
 
     if (modal.classList.contains('hide')) {
@@ -53,7 +53,7 @@ function toggleModalDisplay () {
 }
 
 
-function addToLibrary () {
+function addToLibrary() {
     const title = document.querySelector('#title').value;
     const author = document.querySelector('#author').value;
     const numPages = document.querySelector('#pages').value;
@@ -67,7 +67,7 @@ function addToLibrary () {
 }
 
 
-function removeBookFromLibrary (arrayIndex) {
+function removeBookFromLibrary(arrayIndex) {
     myLibrary.splice(arrayIndex, 1);
 
     const cardContainer = document.querySelector('.card-container');
@@ -79,7 +79,7 @@ function removeBookFromLibrary (arrayIndex) {
 }
 
 
-function changeReadStatus (arrayIndex) {
+function changeReadStatus arrayIndex) {
     myLibrary[arrayIndex].haveRead = true;
 
     document
@@ -90,14 +90,14 @@ function changeReadStatus (arrayIndex) {
 }
 
 
-function displayLibrary () {
+function displayLibrary() {
     for (let i = 0; i < myLibrary.length; i++) {
         displayBook(i);
     }
 }
 
 
-function displayBook (arrayIndex) {
+function displayBook(arrayIndex) {
     let book = myLibrary[arrayIndex];
     const cardContainer = document.querySelector('.card-container');
     const card = newElement('div', null, 'card');
@@ -136,7 +136,7 @@ function displayBook (arrayIndex) {
 }
 
 
-function newElement (elem, text = null, classText = null) {
+function newElement(elem, text = null, classText = null) {
     const element = document.createElement(elem);
 
     if (text !== null) {
