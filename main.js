@@ -2,6 +2,33 @@ const myLibrary = [];
 setButtons();
 
 
+class Book {
+    constructor(title, author, numPages, haveRead) {
+        this.title = title;
+        this.author = author;
+        this. numPages = numPages;
+        this.haveRead = haveRead;
+    }
+
+    haveReadString() {
+        if (this.haveRead === true) {
+            return "have read";
+        } else {
+            return "have not read";
+        }
+    }
+
+    info() {
+        return (
+            `${this.title} by ${this.author}, 
+             ${this.numPages} pages, 
+             ${this.haveReadString()}.
+        `);
+    }
+
+}
+
+/*
 Book.prototype.haveReadString = function () {
     if (this.haveRead === true) {
         return "have read";
@@ -22,7 +49,7 @@ function Book (title, author, numPages, haveRead) {
     this.numPages = numPages;
     this.haveRead = haveRead;
 }
-
+*/
 
 function setButtons () {
     document
