@@ -79,7 +79,7 @@ function removeBookFromLibrary(arrayIndex) {
 }
 
 
-function changeReadStatus arrayIndex) {
+function changeReadStatus(arrayIndex) {
     myLibrary[arrayIndex].haveRead = true;
 
     document
